@@ -3,15 +3,13 @@
 
 #include "OnlineGameInstance.h"
 
-#include "OnlineSubsystem.h"
-#include "OnlineSubsystem.h"
-#include "OnlineSessionSettings.h"
+#include "OnlineSubsystemUtils.h"
 
 int UOnlineGameInstance::GetSessionMaxPlayerNum()
 {
-	/*IOnlineSessionPtr Sessions = IOnlineSubsystem::Get()->GetSessionInterface();
-	FOnlineSessionSettings* CurrentSettings = Sessions->GetSessionSettings(GameSessionName);*/
+	IOnlineSessionPtr Sessions = IOnlineSubsystem::Get()->GetSessionInterface();
+	FOnlineSessionSettings* CurrentSettings = Sessions->GetSessionSettings(GameSessionName);
 
-	//int maxnum = CurrentSettings->
-	return 0;
+	const int maxnum = CurrentSettings->NumPublicConnections;
+	return maxnum;
 }
