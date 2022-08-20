@@ -16,6 +16,6 @@ class ONLINE_API UOnlineGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 
-		UFUNCTION(BlueprintCallable, Category = "Transformation")
+		UFUNCTION(BlueprintCallable, Category = "OnlineSession")
 		int GetSessionMaxPlayerNum();
 };

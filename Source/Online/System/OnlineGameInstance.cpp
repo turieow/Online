@@ -8,8 +8,23 @@
 int UOnlineGameInstance::GetSessionMaxPlayerNum()
 {
 	IOnlineSessionPtr Sessions = IOnlineSubsystem::Get()->GetSessionInterface();
-	FOnlineSessionSettings* CurrentSettings = Sessions->GetSessionSettings(GameSessionName);
 
-	const int maxnum = CurrentSettings->NumPublicConnections;
-	return maxnum;
+	if (Sessions)
+	{
+		FOnlineSessionSettings* CurrentSettings = Sessions->GetSessionSettings(GameSessionName);
+
+		if (CurrentSettings)
+		{
+			const int32 maxnum = CurrentSettings->NumPublicConnections;
+			return maxnum;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+	else
+	{
+		return -1;
+	}
 }
