@@ -7,3 +7,7 @@ https://forums.unrealengine.com/t/how-to-retrieve-a-session-to-get-session-prope
 
 
 ・GameModeBaseとGameStateBase、GameModeとGameStateというようにBaseを付けるかつけないかは合わせるようにする
+
+
+・C++のベースクラスで宣言した関数をBPでオーバーライドする方法
+https://miyahuji111.hatenablog.com/entry/2017/03/31/085842
